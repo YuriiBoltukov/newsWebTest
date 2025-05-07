@@ -7,10 +7,13 @@ interface NewsCardProps {
 
 export function NewsCard({ article }: NewsCardProps ) {
   const { title, description, urlToImage, publishedAt } = article;
-  const encodedArticle = encodeURIComponent(JSON.stringify(article));
 
   return (
-    <Link to={`/article/${encodedArticle}`} className="block rounded-2xl shadow hover:shadow-lg transition overflow-hidden bg-white">
+    <Link
+      to="/article"
+      state={{ article }}
+      className="block rounded-2xl shadow hover:shadow-lg transition overflow-hidden bg-white"
+    >
       {urlToImage && (
         <img src={urlToImage} alt={title} className="w-full h-48 object-cover" />
       )}

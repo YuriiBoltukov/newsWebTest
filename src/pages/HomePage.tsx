@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { getHeadlines } from '../api/newsApi.ts';
-import { NewsCard }          from '../components/NewsCard.tsx';
+import { NewsCard } from '../components/NewsCard.tsx';
 
 export function HomePage(  ) {
   const [articles, setArticles] = useState( [] );
